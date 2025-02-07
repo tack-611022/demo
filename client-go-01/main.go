@@ -31,7 +31,7 @@ func main() {
 	// create informer factorys
 	factory := informers.NewSharedInformerFactoryWithOptions(clientset, 0, informers.WithNamespace("default"))
 
-	informer := factory.Core().V1().ConfigMaps().Informer()
+	informer := factory.Core().V1().Pods().Informer()
 	// write your logic
 	informer.AddEventHandler(cache.ResourceEventHandlerFuncs{
 		AddFunc: func(obj interface{}) {
